@@ -1,3 +1,8 @@
+# aurelia.test
+Getting started for aurelia.
+>>>>>>> origin/master
+
+
 # aurelia-skeleton-navigation
 
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
