@@ -1,6 +1,3 @@
-import 'bootstrap';
-import 'bootstrap/css/bootstrap.css!';
-
 export class Welcome{
 	heading = 'Welcome to the Aurelia Navigation App! http://aurelia.io/index.html#home';
 	firstName = 'Shelley';
