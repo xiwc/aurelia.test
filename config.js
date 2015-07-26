@@ -46,6 +46,7 @@ System.config({
     "font-awesome": "npm:font-awesome@4.3.0",
     "fullcalendar": "npm:fullcalendar@2.3.1",
     "jquery": "github:components/jquery@2.1.4",
+    "jquery-ui": "github:components/jqueryui@1.11.4",
     "moment": "npm:moment@2.10.3",
     "github:aurelia/animator-css@0.13.0": {
       "aurelia-templating": "github:aurelia/templating@0.13.11"
@@ -153,6 +154,9 @@ System.config({
       "aurelia-path": "github:aurelia/path@0.8.0",
       "aurelia-task-queue": "github:aurelia/task-queue@0.6.0",
       "core-js": "npm:core-js@0.9.18"
+    },
+    "github:components/jqueryui@1.11.4": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
