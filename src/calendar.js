@@ -165,7 +165,7 @@ export class Calendar {
                     $('.modal-add-event').modal({
                         // detachable:false,
                         // observeChanges:true,
-                        autofocus: true,
+                        autofocus: false,
                         onApprove: function() {
                             var eventData;
                             if (_this.addedEvt) {
@@ -181,10 +181,14 @@ export class Calendar {
                             }
                             $('#calendar').fullCalendar('unselect');
                         },
-                        onShow: function() {
-                            $('.modal-add-event').modal('refresh');
+                        onDeny: function(){
+                             _this.addedEvt = '';
+                        },
+                        onVisible: function() {
+                            // $('.modal-add-event textarea').focus();
                         }
                     }).modal('show');
+
                 },
                 events: this.events
             });
