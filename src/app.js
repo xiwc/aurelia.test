@@ -11,17 +11,17 @@ export class App {
             nav: true,
             title: 'Welcome'
         }, {
-            route: 'calendar',
-            name: 'calendar',
-            moduleId: './calendar',
-            nav: true,
-            title: 'Calendar'
-        }, {
             route: 'event',
             name: 'event',
             moduleId: './event',
             nav: true,
             title: 'Event'
+        }, {
+            route: 'calendar',
+            name: 'calendar',
+            moduleId: './calendar',
+            nav: true,
+            title: 'Calendar'
         }, {
             route: 'users',
             name: 'users',
