@@ -1,45 +1,45 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="ui grid">
+            <div class="eight wide column">
                 <div class="page-header">
                     <h1>调试输出:<small></small></h1>
                 </div>
-                <div class="well">
+                <div class="ui segment">
                     <div repeat.for="log of logs">
                         <span>${log}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="eight wide column">
                 <div class="page-header">
                     <h1>验证操作:<small></small></h1>
                 </div>
-                <div class="well">
+                <div class="ui segment">
                     <button type="button" click.delegate="click()" class="btn btn-default">click</button>
                 </div>
-                <div class="well">
+                <div class="ui segment">
                     <button type="button" click.delegate="publish()" class="btn btn-default">publish</button>
                 </div>
-                <div class="well">
+                <div class="ui segment">
                     <label for="input">keyup:</label>
                     <input type="text" keyup.delegate="keyup()" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
                 </div>
-                <div class="well">
+                <div class="ui segment">
                     <label for="input2">change:</label>
                     <input type="text" change.delegate="change()" name="" id="input2" class="form-control" value="" required="required" pattern="" title="">
                 </div>
-                <div class="well">
+                <div class="ui segment">
                     <label for="input3">focusin:</label>
                     <input type="text" focusin.delegate="focusin()" name="" id="input3" class="form-control" value="" required="required" pattern="" title="">
                 </div>
-                <div class="well">
-                    <span class="label label-danger" mouseover.delegate="mouseover()">mouseover</span>
+                <div class="ui segment">
+                    <span class="ui label" mouseover.delegate="mouseover()">mouseover</span>
                 </div>
-                <div class="well">
-                    <span class="label label-danger" mousedown.delegate="mousedown()">mousedown</span>
+                <div class="ui segment">
+                    <span class="ui label" mousedown.delegate="mousedown()">mousedown</span>
                 </div>
-                <div class="well" scroll.trigger="scroll()" style="height:200px; overflow:auto;">
+                <div class="ui segment" scroll.trigger="scroll()" style="height:200px; overflow:auto;">
                     <div style="height:500px;"></div>
                 </div>
             </div>

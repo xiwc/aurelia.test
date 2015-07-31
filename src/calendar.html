@@ -1,42 +1,40 @@
 <template>
-    <div class="container-fluid">
-        <div class="row" style="padding-top:20px;">
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <select name="" value.bind="currentLangCode" change.delegate="langChangeHandler()" id="lang-selector" class="form-control">
-                    <option value="">-- Select One --</option>
-                    <option repeat.for="lang of langs" value.bind="lang">${lang}</option>
-                </select>
-                <div id='external-events'>
-                    <h4>Draggable Events</h4>
-                    <div class='fc-event'>My Event 1</div>
-                    <div class='fc-event'>My Event 2</div>
-                    <div class='fc-event'>My Event 3</div>
-                    <div class='fc-event'>My Event 4</div>
-                    <div class='fc-event'>My Event 5</div>
-                    <p>
-                        <input type='checkbox' id='drop-remove' />
-                        <label for='drop-remove'>remove after drop</label>
-                    </p>
-                </div>
+    <div class="ui grid">
+        <div class="three wide column">
+            <select class="ui dropdown" id="lang-selector">
+                <option value="">-- Select One --</option>
+                <option repeat.for="lang of langs" value.bind="lang">${lang}</option>
+            </select>
+            <div id='external-events'>
+                <h4>Draggable Events</h4>
+                <div class='fc-event'>My Event 1</div>
+                <div class='fc-event'>My Event 2</div>
+                <div class='fc-event'>My Event 3</div>
+                <div class='fc-event'>My Event 4</div>
+                <div class='fc-event'>My Event 5</div>
+                <p>
+                    <input type='checkbox' id='drop-remove' />
+                    <label for='drop-remove'>remove after drop</label>
+                </p>
             </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <div id='calendar'></div>
-            </div>
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <div class="ui category search">
-                    <div class="ui icon input">
-                        <input class="prompt" type="text" placeholder="Search events...">
-                        <i class="search icon"></i>
-                    </div>
-                    <div class="results"></div>
+        </div>
+        <div class="ten wide column">
+            <div id='calendar'></div>
+        </div>
+        <div class="three wide column">
+            <div class="ui category search">
+                <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Search events...">
+                    <i class="search icon"></i>
                 </div>
-                <div class="ui list">
-                    <div class="item" repeat.for="evt of events">
-                        <i class="calendar icon"></i>
-                        <div class="content">
-                            <a class="header">${evt.title}</a>
-                            <div class="description">${evt.start}</div>
-                        </div>
+                <div class="results"></div>
+            </div>
+            <div class="ui list">
+                <div class="item" repeat.for="evt of events">
+                    <i class="calendar icon"></i>
+                    <div class="content">
+                        <a class="header">${evt.title}</a>
+                        <div class="description">${evt.start}</div>
                     </div>
                 </div>
             </div>

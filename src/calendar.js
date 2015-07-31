@@ -110,6 +110,17 @@ export class Calendar {
 
         this.renderCalendar();
 
+        $('.ui.dropdown').dropdown({
+            onChange: function(value, text, $choice) {
+                if (!value) {
+                    return;
+                }
+                _this.currentLangCode = value;
+                $('#calendar').fullCalendar('destroy');
+                _this.renderCalendar();
+            }
+        });
+
         $('.ui.search')
             .search({
                 source: this.events,
@@ -181,8 +192,8 @@ export class Calendar {
                             }
                             $('#calendar').fullCalendar('unselect');
                         },
-                        onDeny: function(){
-                             _this.addedEvt = '';
+                        onDeny: function() {
+                            _this.addedEvt = '';
                         },
                         onVisible: function() {
                             // $('.modal-add-event textarea').focus();

@@ -179,12 +179,12 @@ div.au-stagger {
 }
 
 #calendar {
-    height: 600px;
-    width: 833px;
+    /* height: 600px;
+    width: 833px; */
 }
 
 #external-events {
-    float: right;
+    /* float: right; */
     width: 184.5px;
     padding: 0 10px;
     border: 1px solid #ccc;
