@@ -1,7 +1,10 @@
 // import 'bootstrap';
 // import 'bootstrap/css/bootstrap.css!';
+import 'lib/config.js';
+import 'lib/api.js';
 
 export class App {
+
     configureRouter(config, router) {
         config.title = 'Aurelia';
         config.map([{

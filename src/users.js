@@ -5,7 +5,7 @@ import {HttpClient} from 'aurelia-http-client';
 export class Users{
   heading = 'Github Users';
   users = [];
-  url = 'https://api.github.com/users';
+  url = nsApi['user.list'];//'https://api.github.com/users';
 
   constructor(http){
     this.http = http;
