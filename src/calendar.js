@@ -1,18 +1,7 @@
-import 'lib/fullcalendar/fullcalendar.css!';
-import 'jquery';
-// import 'lib/fullcalendar/lib/moment.min.js';
 import 'moment';
 import 'jquery-ui';
-// import 'lib/fullcalendar/lib/jquery-ui.custom.min.js';
-import 'lib/fullcalendar/fullcalendar.min.js';
-import 'lib/fullcalendar/lang-all.js';
-
-import 'lib/semantic-ui/semantic.min.js';
-
-import 'lib/jquery.notification.js';
-
-// import {fullcalendar} from 'fullcalendar';
-// import 'fullcalendar/dist/fullcalendar.min.css!';
+import 'lib-fullcalendar';
+import 'lib-fullcalendar-lang-all';
 
 export class Calendar {
 

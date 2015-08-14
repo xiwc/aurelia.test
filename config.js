@@ -9,7 +9,7 @@ System.config({
   },
   "paths": {
     "*": "dist/*.js",
-    "lib/*": "lib/*",
+    "lib:*": "lib/*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
   },
@@ -18,6 +18,12 @@ System.config({
 
 System.config({
   "map": {
+    "lib-api": "lib:api",
+    "lib-config": "lib:config",
+    "lib-jquery-notification": "lib:jquery.notification",
+    "lib-semantic-ui": "lib:semantic-ui/semantic.min",
+    "lib-fullcalendar": "lib:fullcalendar/fullcalendar.min",
+    "lib-fullcalendar-lang-all": "lib:fullcalendar/lang-all",
     "aurelia-animator-css": "github:aurelia/animator-css@0.13.0",
     "aurelia-binding": "github:aurelia/binding@0.8.2",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.14.0",

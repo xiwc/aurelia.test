@@ -1,7 +1,8 @@
-// import 'bootstrap';
-// import 'bootstrap/css/bootstrap.css!';
-import 'lib/config.js';
-import 'lib/api.js';
+import 'jquery';
+import 'lib-jquery-notification';
+import 'lib-semantic-ui';
+import 'lib-config';
+import 'lib-api';
 
 export class App {
 

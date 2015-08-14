@@ -1,6 +1,3 @@
-import 'jquery';
-import 'lib/jquery.notification.js';
-
 import {Publisher} from './publisher';
 import {ASubscriber, BSubscriber} from './subscriber';
 

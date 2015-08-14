@@ -21,4 +21,57 @@
             </div>
         </form>
     </section>
+    <div class="ui segment">
+        <div class="ui fluid search selection dropdown" jquery.dropdown>
+            <input type="hidden" name="country">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Country</div>
+            <div class="menu">
+                <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
+                <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
+                <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
+                <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
+                <div class="item" data-value="as"><i class="as flag"></i>American Samoa</div>
+            </div>
+        </div>
+    </div>
+    <div class="ui segment">
+        <div class="ui button" jquery.popup data-html="<b>Hello</b> <i>World!</i>">Popup</div>
+    </div>
+    <div class="ui segment">
+        <div class="ui styled accordion" jquery.accordion>
+            <div class="active title"><i class="dropdown icon"></i> What is a dog? </div>
+            <div class="active content">
+                <p>狗算是一种家畜。以其忠诚与忠心广受人类欢迎, 可以在世界各地的许多家庭里发现这个受欢迎的客人。</p>
+            </div>
+            <div class="title"><i class="dropdown icon"></i> What kinds of dogs are there? </div>
+            <div class="content">
+                <p>狗有许多品种，每个品种都有不同的大小及性格，饲主通常选择适合自己生活方式的品种当作自已的伙伴，其中最受欢迎的品种绝对是吉娃娃。</p>
+            </div>
+            <div class="title"><i class="dropdown icon"></i> How do you acquire a dog? </div>
+            <div class="content">
+                <p>通常有三种方式可以取得一只狗狗，宠物店、私人饲主或是动物之家。 (请以领养代替购买)</p>
+                <p>你可以在动物之家内领养一只健康的小狗，比起在宠物店买，收容所中的宠物比较不容易有近亲交配出现的缺陷问题，而且领养一只小狗的费用远比你在宠物店中购买便宜得多。</p>
+            </div>
+        </div>
+    </div>
+    <div class="ui modal" jquery.modal style="height:400px;">
+        <i class="close icon"></i>
+        <div class="header">
+            添加日程
+        </div>
+        <div class="content">
+            <div class="ui form">
+                <h4 class="ui dividing header">填写日程内容</h4>
+                <div class="field">
+                    <label>日程内容</label>
+                    <textarea autofocus value.bind="addedEvt"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui button cancel">取消</div>
+            <div class="ui green button ok">确认</div>
+        </div>
+    </div>
 </template>
