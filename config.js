@@ -21,7 +21,7 @@ System.config({
     "lib-api": "lib:api",
     "lib-config": "lib:config",
     "lib-jquery-notification": "lib:jquery.notification",
-    "lib-semantic-ui": "lib:semantic-ui/semantic.min",
+    "lib-semantic-ui": "lib:semantic-ui/semantic",
     "lib-fullcalendar": "lib:fullcalendar/fullcalendar.min",
     "lib-fullcalendar-lang-all": "lib:fullcalendar/lang-all",
     "aurelia-animator-css": "github:aurelia/animator-css@0.13.0",

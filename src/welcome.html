@@ -22,7 +22,7 @@
         </form>
     </section>
     <div class="ui segment">
-        <div class="ui fluid search selection dropdown" jquery.dropdown>
+        <div class="ui fluid search selection dropdown" jquery.dropdown="on:hover">
             <input type="hidden" name="country">
             <i class="dropdown icon"></i>
             <div class="default text">Select Country</div>
@@ -36,10 +36,10 @@
         </div>
     </div>
     <div class="ui segment">
-        <div class="ui button" jquery.popup data-html="<b>Hello</b> <i>World!</i>">Popup</div>
+        <div class="ui button" jquery.popup="on:click" data-html="<b>Hello</b> <i>World!</i>">Popup</div>
     </div>
     <div class="ui segment">
-        <div class="ui styled accordion" jquery.accordion>
+        <div class="ui styled accordion" jquery.accordion="duration:50000">
             <div class="active title"><i class="dropdown icon"></i> What is a dog? </div>
             <div class="active content">
                 <p>狗算是一种家畜。以其忠诚与忠心广受人类欢迎, 可以在世界各地的许多家庭里发现这个受欢迎的客人。</p>
@@ -55,23 +55,41 @@
             </div>
         </div>
     </div>
-    <div class="ui modal" jquery.modal style="height:400px;">
-        <i class="close icon"></i>
-        <div class="header">
-            添加日程
+    <div class="ui segment">
+        <div class="ui top attached demo menu">
+            <a class="item item01">
+                <i class="sidebar icon"></i> Menu
+            </a>
         </div>
-        <div class="content">
-            <div class="ui form">
-                <h4 class="ui dividing header">填写日程内容</h4>
-                <div class="field">
-                    <label>日程内容</label>
-                    <textarea autofocus value.bind="addedEvt"></textarea>
+        <div class="ui bottom attached segment seg01">
+            <div class="ui inverted labeled icon left vertical sidebar menu">
+                <a class="item">
+                    <i class="home icon"></i> Home
+                </a>
+                <a class="item">
+                    <i class="block layout icon"></i> Topics
+                </a>
+                <a class="item">
+                    <i class="smile icon"></i> Friends
+                </a>
+                <a class="item">
+                    <i class="calendar icon"></i> History
+                </a>
+            </div>
+            <div class="pusher">
+                <div class="ui basic segment">
+                    <h3 class="ui header">Application Content</h3>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
+                    <div class="ui segment"></div>
                 </div>
             </div>
-        </div>
-        <div class="actions">
-            <div class="ui button cancel">取消</div>
-            <div class="ui green button ok">确认</div>
         </div>
     </div>
 </template>

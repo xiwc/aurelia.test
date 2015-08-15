@@ -29,18 +29,13 @@ export class Welcome {
     }
 
     attached() {
-        $('.dropdown').dropdown({
-            on: 'hover',
-            forceSelection: true,
-            placeholder: '请选择'
-            //onChange: this.changeHandler
-        });
-        //$('.modal').modal('show');
+        $('.ui.sidebar')
+            .sidebar({
+                context: $('.seg01')
+            })
+            .sidebar('attach events', '.item01');
     }
 
-    changeHandler() {
-        alert('fdfdf');
-    }
 }
 
 export class UpperValueConverter {
