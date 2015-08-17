@@ -33,6 +33,12 @@ export class App {
             nav: true,
             title: 'Github Users'
         }, {
+            route: 'api',
+            name: 'api',
+            moduleId: './api',
+            nav: true,
+            title: 'Http API'
+        }, {
             route: 'child-router',
             name: 'child-router',
             moduleId: './child-router',
