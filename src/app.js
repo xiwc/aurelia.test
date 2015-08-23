@@ -51,6 +51,12 @@ export class App {
             nav: true,
             title: 'I18N'
         }, {
+            route: 'validation',
+            name: 'validation',
+            moduleId: './validation',
+            nav: true,
+            title: 'Validation'
+        }, {
             route: 'child-router',
             name: 'child-router',
             moduleId: './child-router',

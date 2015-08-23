@@ -19,7 +19,10 @@ export function configure(aurelia) {
                 fallbackLng: 'en-US',
                 debug: false
             });
-        });
+        })
+        .plugin('aurelia-validation', (config) => {
+            config.useLocale('zh-CN')
+        }); //Add this line to load the plugin
 
     aurelia.start().then(a => a.setRoot());
 }
