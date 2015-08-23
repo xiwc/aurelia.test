@@ -39,6 +39,18 @@ export class App {
             nav: true,
             title: 'Http API'
         }, {
+            route: 'iframe',
+            name: 'iframe',
+            moduleId: './iframe',
+            nav: true,
+            title: 'Iframe'
+        }, {
+            route: 'i18n',
+            name: 'i18n',
+            moduleId: './i18n',
+            nav: true,
+            title: 'I18N'
+        }, {
             route: 'child-router',
             name: 'child-router',
             moduleId: './child-router',
