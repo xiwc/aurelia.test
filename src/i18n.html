@@ -1,5 +1,42 @@
 <template>
-	<div class="ui segment">
-		<div class="ui header">I18N</div>
-	</div>
+    <div class="ui segment">
+        <div class="ui header">I18N</div>
+        <span t="score">Title</span>
+        <span i18n="score">Title</span>
+    </div>
+    <section>
+        <div class="row">
+            <div class="col-md-3">
+                <h3>ValueConverter Examples</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Translation with Variables:
+                        <br /> ${ 'score' | t: {'score': userScore}}
+                    </li>
+                    <li class="list-group-item">
+                        Translation singular:
+                        <br /> ${ 'lives' | t: { 'count': 1 } }
+                    </li>
+                    <li class="list-group-item">
+                        Translation plural:
+                        <br /> ${ 'lives' | t: { 'count': 2 } }
+                    </li>
+                    <li class="list-group-item">
+                        Translation singular indefinite:
+                        <br /> ${ 'lives' | t: { 'count': 1, indefinite_article: true } }
+                    </li>
+                    <li class="list-group-item">
+                        Translation plural indefinite:
+                        <br /> ${ 'lives' | t: { 'count': 2, indefinite_article: true } }
+                    </li>
+                    <li class="list-group-item">
+                        Translation without/with context:
+                        <br /> ${ 'friend' | t }
+                        <br /> ${ 'friend' | t: { context: 'male' } }
+                        <br /> ${ 'friend' | t: { context: 'female' } }
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 </template>
