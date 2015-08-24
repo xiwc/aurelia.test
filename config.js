@@ -9,7 +9,7 @@ System.config({
   },
   "paths": {
     "*": "dist/*.js",
-    "lib:*": "lib/*.js",
+    "js/*": "js/*.js",
     "github:*": "jspm_packages/github/*.js",
     "npm:*": "jspm_packages/npm/*.js"
   },
@@ -45,10 +45,10 @@ System.config({
     "babel": "npm:babel-core@5.8.3",
     "babel-runtime": "npm:babel-runtime@5.8.3",
     "core-js": "npm:core-js@0.9.18",
-    "css": "github:systemjs/plugin-css@0.1.13",
+    "css": "github:systemjs/plugin-css@0.1.14",
     "font-awesome": "npm:font-awesome@4.4.0",
-    "fullcalendar": "npm:fullcalendar@2.3.1",
-    "jquery": "github:components/jquery@2.1.4",
+    "fullcalendar": "github:fullcalendar/fullcalendar@2.4.0",
+    "jquery": "github:components/jquery@1.11.2",
     "jquery-ui": "github:components/jqueryui@1.11.4",
     "lib-api": "lib:api",
     "lib-config": "lib:config",
@@ -57,6 +57,11 @@ System.config({
     "lib-jquery-notification": "lib:jquery.notification",
     "lib-semantic-ui": "lib:semantic-ui/semantic",
     "moment": "npm:moment@2.10.6",
+    "semantic-ui": "github:Semantic-Org/Semantic-UI@2.0.8",
+    "github:Semantic-Org/Semantic-UI@2.0.8": {
+      "css": "github:systemjs/plugin-css@0.1.14",
+      "jquery": "github:components/jquery@1.11.2"
+    },
     "github:aurelia/animator-css@0.15.0": {
       "aurelia-metadata": "github:aurelia/metadata@0.7.3",
       "aurelia-templating": "github:aurelia/templating@0.14.4"
@@ -189,7 +194,7 @@ System.config({
       "aurelia-templating": "github:aurelia/templating@0.14.4"
     },
     "github:components/jqueryui@1.11.4": {
-      "jquery": "github:components/jquery@2.1.4"
+      "jquery": "github:components/jquery@1.11.2"
     },
     "github:jspm/nodelibs-process@0.1.1": {
       "process": "npm:process@0.10.1"
@@ -210,7 +215,7 @@ System.config({
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:font-awesome@4.4.0": {
-      "css": "github:systemjs/plugin-css@0.1.13"
+      "css": "github:systemjs/plugin-css@0.1.14"
     },
     "npm:fullcalendar@2.3.1": {
       "jquery": "npm:jquery@3.0.0-alpha1",

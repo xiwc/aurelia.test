@@ -1,0 +1,59 @@
+<template>
+    <div class="ui button" click.delegate="debugHandler($event)">Debug</div>
+    <div class="ui modal" id="md-debug">
+        <i class="close icon"></i>
+        <div class="header">
+            Debug设置
+        </div>
+        <div class="content">
+            <div class="ui segment top attached">
+                <div class="ui search" id="search-api">
+                    <div class="ui icon input">
+                        <input class="prompt" value.bind="searchText" type="text" placeholder="Search api...">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </div>
+            <div class="ui bottom attached segment">
+                <div class="ui celled grid">
+                    <div class="row">
+                        <div class="four wide column">
+                            <div class="ui toggle checkbox" id="chk-select-all" jquery.popup title="全选 / 反选" data-variation="inverted">
+                                <input type="checkbox">
+                                <label><b>名称</b></label>
+                            </div>
+                        </div>
+                        <div class="eight wide column">
+                            <label><b>URL(Real</b></label>
+                            <label><b> / </b></label>
+                            <label><b>Mock)</b></label>
+                        </div>
+                        <div class="four wide column">
+                        </div>
+                    </div>
+                    <div class="row" repeat.for="api of filterApiArr">
+                        <div class="four wide column">
+                            <div class="ui toggle checkbox chk-api">
+                                <input value.bind="api.name" change.trigger="$parent.chgHandler($event)" if.bind="api.value.ismock" checked="" type="checkbox">
+                                <input value.bind="api.name" change.trigger="$parent.chgHandler($event)" if.bind="!api.value.ismock" type="checkbox">
+                                <label><b>${api.name}</b></label>
+                            </div>
+                        </div>
+                        <div class="eight wide column">
+                            <p>${api.value.real}</p>
+                            <p>${api.value.mock}</p>
+                            <p>${api.value.ismock}</p>
+                        </div>
+                        <div class="four wide column">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui cancel negative button">取消</div>
+            <div class="ui ok positive button">确定</div>
+        </div>
+    </div>
+</template>

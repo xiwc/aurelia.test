@@ -76,10 +76,11 @@
       "core-js": "npm:core-js@^0.9.4",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0",
-      "fullcalendar": "npm:fullcalendar@^2.3.1",
-      "jquery": "github:components/jquery@^2.1.4",
+      "fullcalendar": "github:fullcalendar/fullcalendar@^2.4.0",
+      "jquery": "github:components/jquery@1.11.2",
       "jquery-ui": "github:components/jqueryui@^1.11.4",
-      "moment": "npm:moment@^2.10.3"
+      "moment": "npm:moment@^2.10.3",
+      "semantic-ui": "github:Semantic-Org/Semantic-UI@^2.0.8"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
