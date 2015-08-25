@@ -8,6 +8,7 @@ export function configure(aurelia) {
         .standardConfiguration()
         .developmentLogging()
         .plugin('aurelia-animator-css')
+        .globalResources(['debug/debug'])
         .plugin('aurelia-i18next', (instance) => {
             // adapt options to your needs (see http://i18next.com/pages/doc_init.html)
             instance.setup({

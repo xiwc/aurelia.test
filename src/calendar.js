@@ -1,7 +1,8 @@
 import 'moment';
 import 'jquery-ui';
-import 'lib-fullcalendar';
-import 'lib-fullcalendar-lang-all';
+import 'fullcalendar';
+import 'fullcalendar@2.4.0/lang-all';
+import 'fullcalendar@2.4.0/fullcalendar.min.css!';
 
 export class Calendar {
 
