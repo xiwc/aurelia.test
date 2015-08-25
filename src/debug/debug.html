@@ -35,8 +35,7 @@
                     <div class="row" repeat.for="api of filterApiArr">
                         <div class="four wide column">
                             <div class="ui toggle checkbox chk-api">
-                                <input value.bind="api.name" change.trigger="$parent.chgHandler($event)" if.bind="api.value.ismock" checked="" type="checkbox">
-                                <input value.bind="api.name" change.trigger="$parent.chgHandler($event)" if.bind="!api.value.ismock" type="checkbox">
+                                <input change.trigger="$parent.chgHandler($event)" value.bind="api.name" type="checkbox">
                                 <label><b>${api.name}</b></label>
                             </div>
                         </div>

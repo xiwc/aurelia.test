@@ -37,14 +37,16 @@ export class Debug {
 
         $('#chk-select-all').checkbox({
             onChecked: function() {
-                $(this).closest('.grid').find('.chk-api input[type="checkbox"]').attr('checked', '');
+
+                $(this).closest('.grid').find('.chk-api').checkbox('set checked');
 
                 $.each(_this.filterApiArr, function(index, api) {
                     api.value.ismock = true;
                 });
             },
             onUnchecked: function() {
-                $(this).closest('.grid').find('.chk-api input[type="checkbox"]').removeAttr('checked');
+
+                $(this).closest('.grid').find('.chk-api').checkbox('set unchecked');
 
                 $.each(_this.filterApiArr, function(index, api) {
                     api.value.ismock = false;

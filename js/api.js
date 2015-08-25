@@ -6,7 +6,7 @@ window.nsApiFunc = (function() {
         'user.list': {
             real: 'https://api.github.com/users',
             mock: '/mock/user/list.json',
-            ismock: false
+            ismock: true
         },
         'user.update': {
             real: 'https://api.github.com/users',
