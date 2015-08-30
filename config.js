@@ -46,6 +46,8 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.3",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.14",
+    "dragdrop": "github:kbjr/DragDrop@0.3.0",
+    "dragula": "github:bevacqua/dragula@3.1.0",
     "font-awesome": "npm:font-awesome@4.4.0",
     "fullcalendar": "github:fullcalendar/fullcalendar@2.4.0",
     "jquery": "github:components/jquery@1.11.2",
@@ -216,14 +218,6 @@ System.config({
     },
     "npm:font-awesome@4.4.0": {
       "css": "github:systemjs/plugin-css@0.1.14"
-    },
-    "npm:fullcalendar@2.3.1": {
-      "jquery": "npm:jquery@3.0.0-alpha1",
-      "moment": "npm:moment@2.10.6",
-      "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:jquery@3.0.0-alpha1": {
-      "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:moment@2.10.6": {
       "process": "github:jspm/nodelibs-process@0.1.1"
