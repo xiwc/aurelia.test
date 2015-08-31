@@ -15,6 +15,12 @@ export class App {
             nav: true,
             title: 'Welcome'
         }, {
+            route: ['dragdrop'],
+            name: 'dragdrop',
+            moduleId: './drag-drop',
+            nav: true,
+            title: 'Dragdrop'
+        }, {
             route: 'event',
             name: 'event',
             moduleId: './event',

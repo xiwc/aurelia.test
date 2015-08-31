@@ -46,6 +46,8 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.3",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.14",
+    "dragdrop": "github:kbjr/DragDrop@0.3.0",
+    "dragula": "github:bevacqua/dragula@3.1.0",
     "font-awesome": "npm:font-awesome@4.4.0",
     "fullcalendar": "github:fullcalendar/fullcalendar@2.4.0",
     "jquery": "github:components/jquery@1.11.2",
