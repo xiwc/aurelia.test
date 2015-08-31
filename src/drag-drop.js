@@ -10,9 +10,9 @@ export class MyDragDrop {
 
     attached() {
 
-        dragula([document.querySelector('#todo'), document.querySelector('#doing')]);
+        dragula([document.querySelector('#todo'), document.querySelector('#doing'), document.querySelector('#checking'), document.querySelector('#done')]);
         // dragula([document.querySelector('#doing'), document.querySelector('#checking')]);
-        dragula([document.querySelector('#checking'), document.querySelector('#done')]);
+        // dragula([document.querySelector('#checking'), document.querySelector('#done')]);
 
         // var elem = document.getElementById('cd-item');
         // var elem2 = document.getElementById('cd-header');
