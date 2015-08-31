@@ -13,7 +13,8 @@ export class Debug {
         for (var name in nsAPI) {
             this.apiArr.push({
                 name: name,
-                value: nsAPI[name]
+                value: nsAPI[name],
+                isHidden: false
             });
 
             this.content.push({
@@ -28,6 +29,28 @@ export class Debug {
 
         var _this = this;
 
+        $('#md-debug').modal({
+            closable: false,
+            onApprove: function($elem) {
+
+                var $chkArr = $elem.closest('.modal').find('.grid .chk-api');
+
+                $chkArr.each(function(index, el) {
+                    var isChked = $(el).checkbox('is checked');
+                    $.each(_this.filterApiArr, function(index, api) {
+                        if (api.name === $(el).find('input').val()) {
+                            api.value.ismock = isChked;
+                            return false;
+                        }
+                    });
+
+                });
+
+                $('#md-debug .grid .chk-api').checkbox();
+
+            }
+        });
+
         $('#search-api').search({
             source: _this.content,
             onSelect: function(result, response) {
@@ -38,20 +61,25 @@ export class Debug {
         $('#chk-select-all').checkbox({
             onChecked: function() {
 
-                $(this).closest('.grid').find('.chk-api').checkbox('set checked');
-
-                $.each(_this.filterApiArr, function(index, api) {
-                    api.value.ismock = true;
-                });
+                $(this).closest('.grid').find('.row:visible').find('.chk-api').checkbox('set checked');
             },
             onUnchecked: function() {
 
-                $(this).closest('.grid').find('.chk-api').checkbox('set unchecked');
-
-                $.each(_this.filterApiArr, function(index, api) {
-                    api.value.ismock = false;
-                });
+                $(this).closest('.grid').find('.row:visible').find('.chk-api').checkbox('set unchecked');
             }
+        });
+
+        $('#md-debug .grid .chk-api').each(function(index, el) {
+            $.each(_this.filterApiArr, function(index, api) {
+                if (api.name === $(el).find('input').val()) {
+                    if (api.value.ismock) {
+                        $(el).checkbox('set checked');
+                    } else {
+                        $(el).checkbox('set unchecked');
+                    }
+                    return false;
+                }
+            });
         });
 
     }
@@ -60,11 +88,23 @@ export class Debug {
         return this._searchText;
     }
     set searchText(newValue) {
+
+        var _this = this;
         this._searchText = newValue;
+
         if (newValue === '') {
-            this.filterApiArr = this.apiArr;
+            $.each(this.filterApiArr, function(index, val) {
+                val.isHidden = false;
+            });
         } else {
-            this.filterApiArr = this.apiArr.filter(x => x.name.indexOf(this.searchText) !== -1);
+
+            $.each(this.filterApiArr, function(index, val) {
+                if (val.name.indexOf(_this.searchText) !== -1) {
+                    val.isHidden = false;
+                } else {
+                    val.isHidden = true;
+                }
+            });
         }
     }
 
@@ -72,18 +112,4 @@ export class Debug {
         $('#md-debug').modal('show');
     }
 
-    chgHandler(evt) {
-
-        var $chk = $(evt.target);
-
-        console.log($chk.val());
-        console.log($chk.get(0).checked);
-
-        $.each(this.filterApiArr, function(index, api) {
-            if (api.name === $chk.val()) {
-                api.value.ismock = $chk.get(0).checked;
-                return false;
-            }
-        });
-    }
 }

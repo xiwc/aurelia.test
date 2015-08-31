@@ -1,7 +1,7 @@
 <template>
     <div class="ui button" click.delegate="debugHandler($event)">Debug</div>
     <div class="ui modal" id="md-debug">
-        <i class="close icon"></i>
+        <!-- <i class="close icon"></i> -->
         <div class="header">
             Debug设置
         </div>
@@ -15,7 +15,7 @@
                     <div class="results"></div>
                 </div>
             </div>
-            <div class="ui bottom attached segment">
+            <div class="ui bottom attached segment" style="max-height: 300px; overflow-y: auto;">
                 <div class="ui celled grid">
                     <div class="row">
                         <div class="four wide column">
@@ -32,10 +32,10 @@
                         <div class="four wide column">
                         </div>
                     </div>
-                    <div class="row" repeat.for="api of filterApiArr">
+                    <div class="row" repeat.for="api of filterApiArr" show.bind="!api.isHidden">
                         <div class="four wide column">
                             <div class="ui toggle checkbox chk-api">
-                                <input change.trigger="$parent.chgHandler($event)" value.bind="api.name" type="checkbox">
+                                <input value.bind="api.name" type="checkbox">
                                 <label><b>${api.name}</b></label>
                             </div>
                         </div>

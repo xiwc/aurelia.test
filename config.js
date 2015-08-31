@@ -217,14 +217,6 @@ System.config({
     "npm:font-awesome@4.4.0": {
       "css": "github:systemjs/plugin-css@0.1.14"
     },
-    "npm:fullcalendar@2.3.1": {
-      "jquery": "npm:jquery@3.0.0-alpha1",
-      "moment": "npm:moment@2.10.6",
-      "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:jquery@3.0.0-alpha1": {
-      "process": "github:jspm/nodelibs-process@0.1.1"
-    },
     "npm:moment@2.10.6": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     }
