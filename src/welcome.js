@@ -8,6 +8,9 @@ export class Welcome {
     firstName = 'John';
     lastName = 'Doe';
     previousValue = this.fullName;
+    selVal = "";
+    val = "af";
+    vals = ['css', 'design'];
 
     //Getters can't be observed with Object.observe, so they must be dirty checked.
     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
@@ -22,6 +25,10 @@ export class Welcome {
         alert(`Welcome, ${this.fullName}!`);
     }
 
+    chgHandler(){
+        console.log('change...');
+    }
+
     canDeactivate() {
         if (this.fullName !== this.previousValue) {
             return confirm('Are you sure you want to leave?');
@@ -29,11 +36,20 @@ export class Welcome {
     }
 
     attached() {
+
         $('.ui.sidebar')
             .sidebar({
                 context: $('.seg01')
             })
             .sidebar('attach events', '.item01');
+
+        $('#dropdown').dropdown({
+            onChange: (val) => {
+                console.log(val);
+                this.firstName = val;
+                this.selVal = val;
+            }
+        });
     }
 
 }
