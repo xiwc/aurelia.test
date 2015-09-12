@@ -74,7 +74,7 @@ export class Welcome {
     // }
 
     changeCall(evt) {
-        console.log('test' + evt + this.fullName);
+        console.log('test ' + evt + " " + this.fullName);
     }
 
 }
