@@ -1,5 +1,10 @@
 <template>
     <div class="ui segment">
-    	自定义组件
+        自定义组件
+    </div>
+    <div class="ui segment">
+        <div class="ui list" id="listLifecycle">
+            <div class="item" repeat.for="log of logs">${log}</div>
+        </div>
     </div>
 </template>

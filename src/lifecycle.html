@@ -1,5 +1,10 @@
 <template>
     <require from='./comp'></require>
     <div class="ui segment">生命周期</div>
-    <comp></comp>
+    <div class="ui segment">
+    	<div class="ui list" id="listLifecycle">
+    		<div class="item" repeat.for="log of logs">${log}</div>
+    	</div>
+    </div>
+    <comp comp.ref="comp"></comp>
 </template>
