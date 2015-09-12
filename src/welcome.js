@@ -25,7 +25,7 @@ export class Welcome {
         alert(`Welcome, ${this.fullName}!`);
     }
 
-    chgHandler(){
+    chgHandler() {
         console.log('change...');
     }
 
@@ -33,6 +33,20 @@ export class Welcome {
         if (this.fullName !== this.previousValue) {
             return confirm('Are you sure you want to leave?');
         }
+    }
+
+    created(view) {
+        console.log("Welcome created");
+    }
+
+    bind(bindingContext) {
+        console.log("Welcome bind");
+
+        this.changeHandler = (arr, p1, p2) => {
+            // console.log(arguments.length);
+            console.log(arr + ' ' + p1 + ' ' + p2);
+            console.log('test =>' + this.fullName);
+        };
     }
 
     attached() {
@@ -50,6 +64,17 @@ export class Welcome {
                 this.selVal = val;
             }
         });
+
+        $(this.ddLan).dropdown();
+
+    }
+
+    // changeHandler(){
+    //     console.log('test' + this.fullName);
+    // }
+
+    changeCall(evt) {
+        console.log('test' + evt + this.fullName);
     }
 
 }
