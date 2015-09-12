@@ -3,6 +3,7 @@
         自定义组件
     </div>
     <div class="ui segment">
+        <div click.delegate="btnHandler($event)" class="ui button">button</div>
         <div class="ui list" id="listLifecycle">
             <div class="item" repeat.for="log of logs">${log}</div>
         </div>

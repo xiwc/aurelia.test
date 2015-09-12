@@ -13,11 +13,11 @@ export function configure(aurelia) {
             // adapt options to your needs (see http://i18next.com/pages/doc_init.html)
             instance.setup({
                 resGetPath: 'locale/__lng__/__ns__.json',
-                lng: 'zh-CN',
+                lng: 'zh',
                 attributes: ['t', 'i18n'],
                 getAsync: true,
                 sendMissing: false,
-                fallbackLng: 'zh-CN',
+                fallbackLng: 'zh',
                 debug: false
             });
         })
