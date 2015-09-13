@@ -314,7 +314,7 @@
                 </div>
                 <div class="field">
                     <label>Full Name</label>
-                    <p class="help-block">${fullName | upper}</p>
+                    <p class="help-block">${fullName | upper | lower | abbreviate:7}</p>
                 </div>
                 <div class="field">
                     <button type="submit" class="ui button">Submit</button>

@@ -23,7 +23,7 @@ export function configure(aurelia) {
         })
         .plugin('aurelia-validation', (config) => {
             config.useLocale('zh-CN')
-        }); //Add this line to load the plugin
+        }).globalResources(['comp/converter']); //Add this line to load the plugin
 
     aurelia.start().then(a => a.setRoot());
 }
