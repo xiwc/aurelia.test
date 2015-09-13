@@ -37,3 +37,10 @@ export class AbbreviateValueConverter {
         return value;
     }
 }
+
+export class AbbValueConverter {
+    toView(value, p1, p2) {
+
+        return value;
+    }
+}
