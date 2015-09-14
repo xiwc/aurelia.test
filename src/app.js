@@ -15,6 +15,18 @@ export class App {
             nav: true,
             title: 'Welcome'
         }, {
+            route: ['lifecycle'],
+            name: 'lifecycle',
+            moduleId: './lifecycle',
+            nav: true,
+            title: 'Lifecycle'
+        }, {
+            route: ['custom-elem'],
+            name: 'custom-elem',
+            moduleId: './custom-elem',
+            nav: true,
+            title: 'CustomElem'
+        }, {
             route: ['dragdrop'],
             name: 'dragdrop',
             moduleId: './drag-drop',

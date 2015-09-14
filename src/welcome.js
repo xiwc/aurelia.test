@@ -25,7 +25,7 @@ export class Welcome {
         alert(`Welcome, ${this.fullName}!`);
     }
 
-    chgHandler(){
+    chgHandler() {
         console.log('change...');
     }
 
@@ -35,8 +35,22 @@ export class Welcome {
         }
     }
 
-    buttonCallback(info){
+    buttonCallback(info) {
         console.log(info);
+    }
+    
+    created(view) {
+        console.log("Welcome created");
+    }
+
+    bind(bindingContext) {
+        console.log("Welcome bind");
+
+        this.changeHandler = (arr, p1, p2) => {
+            // console.log(arguments.length);
+            console.log(arr + ' ' + p1 + ' ' + p2);
+            console.log('test =>' + this.fullName);
+        };
     }
 
     attached() {
@@ -54,12 +68,17 @@ export class Welcome {
                 this.selVal = val;
             }
         });
+
+        $(this.ddLan).dropdown();
+
     }
 
-}
+    // changeHandler(){
+    //     console.log('test' + this.fullName);
+    // }
 
-export class UpperValueConverter {
-    toView(value) {
-        return value && value.toUpperCase();
+    changeCall(evt) {
+        console.log('test ' + evt + " " + this.fullName);
     }
+
 }
