@@ -1,8 +1,13 @@
 <template>
+    <require from="button-comp"></require>
     <section class="au-animate">
         <h2>${heading}</h2>
         <form submit.delegate="submit()">
             <div class="ui form segment">
+                <div class="field">
+                    <label>First Name</label>
+                    <button-comp callback.bind="buttonCallback"></button-comp>
+                </div>
                 <div class="field">
                     <label for="fn">First Name</label>
                     <input type="text" value.bind="firstName" class="form-control" id="fn" placeholder="first name">

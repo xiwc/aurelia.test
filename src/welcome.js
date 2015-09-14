@@ -35,6 +35,10 @@ export class Welcome {
         }
     }
 
+    buttonCallback(info){
+        console.log(info);
+    }
+
     attached() {
 
         $('.ui.sidebar')
