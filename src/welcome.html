@@ -1,5 +1,10 @@
 <template>
     <require from="button-comp"></require>
+    <require from="comp/dropdown"></require>
+    <div class="ui segment">
+        <dropdown values.bind="vals"></dropdown>
+        <div class="ui button" click.delegate="addHandler()">Show Selected Items</div>
+    </div>
     <section class="au-animate">
         <h2>${heading}</h2>
         <form submit.delegate="submit()">

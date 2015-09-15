@@ -20,6 +20,11 @@ export class Welcome {
         return `${this.firstName} ${this.lastName}`;
     }
 
+    addHandler() {
+        console.log(this.vals);
+        this.vals.push('html');
+    }
+
     submit() {
         this.previousValue = this.fullName;
         alert(`Welcome, ${this.fullName}!`);
@@ -38,7 +43,7 @@ export class Welcome {
     buttonCallback(info) {
         console.log(info);
     }
-    
+
     created(view) {
         console.log("Welcome created");
     }
