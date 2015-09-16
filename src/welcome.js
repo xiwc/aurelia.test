@@ -20,7 +20,13 @@ export class Welcome {
         return `${this.firstName} ${this.lastName}`;
     }
 
+    showHandler(evt, v, v2) {
+
+        $.ntf.info(evt + ' ' + v + ' ' + v2)
+    }
+
     addHandler() {
+
         console.log(this.vals);
         this.vals.push('html');
     }
