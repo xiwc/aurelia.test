@@ -1,5 +1,33 @@
 <template>
     <require from="button-comp"></require>
+   <!--  <section class="au-animate">
+       <h2>${heading}</h2>
+       <div>
+           <div class="col-md-2">
+               <ul class="well nav nav-pills nav-stacked">
+                   <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+                       <a href.bind="row.href">${row.title}</a>
+                   </li>
+               </ul>
+           </div>
+           <div class="col-md-10" style="padding: 0">
+               <router-view></router-view>
+           </div>
+       </div>
+   </section> -->
+    <div class="ui segment">
+        <select ref="dd1" value.bind="sels" name="skills" multiple="" class="ui search selection dropdown">
+            <option value="abc">ABC</option>
+            <option repeat.for="item of items" value.bind="item">${item}</option>
+        </select>
+        <div click.delegate="addItemHandler()" class="ui button">Add Item</div>
+    </div>
+    <div class="ui segment">
+        <div class="ui active dimmer" if.bind="router.isNavigating">
+            <div class="ui large text loader">加载中...</div>
+        </div>
+        <router-view></router-view>
+    </div>
     <section class="au-animate">
         <h2>${heading}</h2>
         <form submit.delegate="submit()">

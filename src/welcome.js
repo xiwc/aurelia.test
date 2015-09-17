@@ -12,12 +12,33 @@ export class Welcome {
     val = "af";
     vals = ['css', 'design'];
 
+    items = ['aaa', 'bbb', 'ccc'];
+    sels = ['abc'];
+
     //Getters can't be observed with Object.observe, so they must be dirty checked.
     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
     //To optimize by declaring the properties that this getter is computed from, uncomment the line below.
     //@computedFrom('firstName', 'lastName')
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
+    }
+
+    // configureRouter(config, router) {
+        
+    //     config.map([{
+    //         route: 'users',
+    //         name: 'users',
+    //         moduleId: 'users',
+    //         nav: true,
+    //         title: 'Github Users'
+    //     }]);
+
+    //     this.router = router;
+    // }
+
+    addItemHandler() {
+        this.items.push(new Date().getTime());
+        // this.sels = ['ccc'];
     }
 
     submit() {
@@ -38,7 +59,7 @@ export class Welcome {
     buttonCallback(info) {
         console.log(info);
     }
-    
+
     created(view) {
         console.log("Welcome created");
     }
@@ -70,6 +91,7 @@ export class Welcome {
         });
 
         $(this.ddLan).dropdown();
+        $(this.dd1).dropdown();
 
     }
 

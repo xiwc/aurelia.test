@@ -18,4 +18,17 @@ export class CustomElem {
     btnHandler(evt) {
         console.log(this.arr);
     }
+
+    configureRouter(config, router) {
+
+        config.map([{
+            route: '',
+            name: 'comp',
+            moduleId: 'comp',
+            nav: true,
+            title: 'Comp'
+        }]);
+
+        this.router = router;
+    }
 }
