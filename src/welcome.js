@@ -11,6 +11,18 @@ export class Welcome {
     selVal = "";
     val = "af";
     vals = ['css', 'design'];
+    items = [{
+        name: 'Albania',
+        value: 'al'
+    }, {
+        name: 'Afghanistan',
+        value: 'af'
+    }, {
+        name: 'American Samoa',
+        value: 'as'
+    }];
+
+    sed = 0;
 
     //Getters can't be observed with Object.observe, so they must be dirty checked.
     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
@@ -18,6 +30,41 @@ export class Welcome {
     //@computedFrom('firstName', 'lastName')
     get fullName() {
         return `${this.firstName} ${this.lastName}`;
+    }
+
+    constructor() {
+        Array.observe(this.items, (changes) => {
+            console.log(changes);
+            $(this.dd3).dropdown('set selected', this.sed);
+        });
+
+    }
+
+    addAndSetHander() {
+        // this.val = 'as';
+        var i = ++this.sed;
+        this.items.push({
+            name: 'Item-' + i,
+            value: i
+        });
+
+        // $(this.dd3).dropdown('set selected', this.sed); // 不起作用
+
+        // 延迟设置, 起作用
+        setTimeout(() => {
+            $(this.dd3).dropdown('set selected', this.sed);
+        }, 5000);
+
+        $.ntf.info('addAndSetHander');
+        // $(this.dd3).dropdown('refresh');
+        // $(this.dd3).dropdown('restore defaults');
+    }
+
+    addAndSetFereshHander() {
+        $.ntf.info('addAndSetFereshHander');
+        // $(this.dd3).dropdown('refresh');
+        // $(this.dd3).dropdown('restore defaults');
+        $(this.dd3).dropdown('set selected', this.sed);
     }
 
     showHandler(evt, v, v2) {
@@ -81,6 +128,23 @@ export class Welcome {
         });
 
         $(this.ddLan).dropdown();
+
+        // this.menu1.addEventListener('DOMNodeInserted', () => {
+        //     $.ntf.info('DOMNodeInserted');
+
+        //     $(this.dd3).dropdown('set selected', this.sed);
+        // }, false);
+        // this.menu1.addEventListener('DOMAttrModified', () => {
+        //     $.ntf.info('DOMAttrModified');
+
+        //     $(this.dd3).dropdown('set selected', this.sed);
+        // }, false);
+        // this.menu1.addEventListener('DOMNodeRemoved', () => {
+        //     $.ntf.info('DOMNodeRemoved');
+
+        //     $(this.dd3).dropdown('set selected', this.sed);
+        // }, false);
+
 
     }
 

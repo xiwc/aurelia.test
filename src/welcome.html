@@ -1,4 +1,16 @@
 <template>
+    <div class="ui segment">
+        <div ref="dd3" class="ui search selection dropdown" jquery.dropdown>
+            <input type="hidden" name="country" value.bind="val">
+            <i class="dropdown icon"></i>
+            <div class="default text">Select Country</div>
+            <div ref="menu1" class="menu">
+                <div repeat.for="item of items" class="item" data-value="${item.value}">${item.name}</div>
+            </div>
+        </div>
+        <div click.delegate="addAndSetHander()" class="ui button">Add items And set new selected items</div>
+        <div click.delegate="addAndSetFereshHander()" class="ui button">Refresh</div>
+    </div>
     <require from="button-comp"></require>
     <require from="comp/dropdown"></require>
     <div class="ui segment">
