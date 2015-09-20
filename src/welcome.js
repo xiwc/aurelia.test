@@ -24,6 +24,9 @@ export class Welcome {
 
     sed = 0;
 
+    items = ['aaa', 'bbb', 'ccc'];
+    sels = ['abc'];
+
     //Getters can't be observed with Object.observe, so they must be dirty checked.
     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
     //To optimize by declaring the properties that this getter is computed from, uncomment the line below.
@@ -67,6 +70,24 @@ export class Welcome {
         $(this.dd3).dropdown('set selected', this.sed);
     }
 
+    // configureRouter(config, router) {
+        
+    //     config.map([{
+    //         route: 'users',
+    //         name: 'users',
+    //         moduleId: 'users',
+    //         nav: true,
+    //         title: 'Github Users'
+    //     }]);
+
+    //     this.router = router;
+    // }
+
+    addItemHandler() {
+        this.items.push(new Date().getTime());
+        // this.sels = ['ccc'];
+    }
+    
     showHandler(evt, v, v2) {
 
         $.ntf.info(evt + ' ' + v + ' ' + v2)
@@ -128,6 +149,7 @@ export class Welcome {
         });
 
         $(this.ddLan).dropdown();
+        $(this.dd1).dropdown();
 
         // this.menu1.addEventListener('DOMNodeInserted', () => {
         //     $.ntf.info('DOMNodeInserted');
