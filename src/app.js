@@ -1,8 +1,8 @@
 import 'jquery';
 import 'semantic-ui';
-import 'js/jquery.notification';
-import 'js/config';
-import 'js/api';
+import 'global/jquery.notification';
+import 'global/config';
+import 'global/api';
 
 export class App {
 

@@ -169,6 +169,7 @@ export class Welcome {
 
         $(this.ddLan).dropdown();
         $(this.dd1).dropdown();
+        $(this.dd3).dropdown({allowAdditions: true});
 
         // this.menu1.addEventListener('DOMNodeInserted', () => {
         //     $.ntf.info('DOMNodeInserted');

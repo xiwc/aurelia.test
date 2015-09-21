@@ -1,10 +1,10 @@
 <template>
     <div class="ui segment">
-        <div ref="dd3" class="ui multiple search selection dropdown" jquery.dropdown="allowAdditions: true">
+        <div ref="dd3" class="ui multiple search selection dropdown">
             <input type="hidden" name="country" value.bind="val">
             <i class="dropdown icon"></i>
             <div class="default text">Select Country</div>
-            <div ref="menu1" class="menu">
+            <div class="menu">
                 <div repeat.for="item of items" class="item" data-value="${item.value}">${item.name}</div>
             </div>
         </div>
@@ -30,7 +30,7 @@
     <div class="ui segment">
         <select ref="dd1" value.bind="sels" name="skills" multiple="" class="ui search selection dropdown">
             <option value="abc">ABC</option>
-            <option repeat.for="item of items" value.bind="item">${item}</option>
+            <option repeat.for="item of items" value.bind="item.value">${item.name}</option>
         </select>
         <div click.delegate="addItemHandler()" class="ui button">Add Item</div>
     </div>

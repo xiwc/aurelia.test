@@ -3,7 +3,7 @@ import {
     default as dragula
 }
 from "dragula";
-import "dragula@3.1.0/dist/dragula.min.css!";
+import "dragula/dist/dragula.min.css!";
 
 export class MyDragDrop {
 
