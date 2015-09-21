@@ -1,8 +1,15 @@
 import {
-    computedFrom
+    computedFrom, bindable, bindingMode
 }
 from 'aurelia-framework';
 
+@bindable({
+  name:'myProperty', //name of the property on the class
+  attribute:'my-property', //name of the attribute in HTML
+  changeHandler:'myPropertyChanged', //name of the method to invoke when the property changes
+  defaultBindingMode: bindingMode.oneWay, //default binding mode used with the .bind command
+  defaultValue: undefined //default value of the property, if not bound or set in HTML
+})
 export class Welcome {
     heading = 'Welcome to the Aurelia Navigation App!';
     firstName = 'John';
@@ -24,7 +31,7 @@ export class Welcome {
 
     sed = 0;
 
-    items = ['aaa', 'bbb', 'ccc'];
+    // items = ['aaa', 'bbb', 'ccc'];
     sels = ['abc'];
 
     //Getters can't be observed with Object.observe, so they must be dirty checked.
@@ -36,11 +43,18 @@ export class Welcome {
     }
 
     constructor() {
-        Array.observe(this.items, (changes) => {
-            console.log(changes);
-            $(this.dd3).dropdown('set selected', this.sed);
-        });
+        // Array.observe(this.items, (changes) => {
+        //     $(this.dd3).dropdown();
+        //     $(this.dd3).dropdown('set selected', this.sed);
+        //     $.ntf.info('Array.observe');
+        // });
 
+    }
+
+    myPropertyChanged() {
+        $(this.dd3).dropdown({allowAdditions: true});
+        $(this.dd3).dropdown('set selected', this.sed);
+        $.ntf.info('myPropertyChanged');
     }
 
     addAndSetHander() {
@@ -51,12 +65,17 @@ export class Welcome {
             value: i
         });
 
+        this.myProperty = this.sed;
+
+        // $(this.dd3).dropdown({allowAdditions: true});
+        // $(this.dd3).dropdown('set selected', this.sed);
+
         // $(this.dd3).dropdown('set selected', this.sed); // 不起作用
 
-        // 延迟设置, 起作用
-        setTimeout(() => {
-            $(this.dd3).dropdown('set selected', this.sed);
-        }, 5000);
+        // // 延迟设置, 起作用
+        // setTimeout(() => {
+        //     $(this.dd3).dropdown('set selected', this.sed);
+        // }, 5000);
 
         $.ntf.info('addAndSetHander');
         // $(this.dd3).dropdown('refresh');
