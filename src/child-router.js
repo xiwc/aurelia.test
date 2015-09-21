@@ -5,31 +5,31 @@ export class ChildRouter {
         config.map([{
             route: ['', 'welcome'],
             name: 'welcome',
-            moduleId: './welcome',
+            moduleId: 'welcome',
             nav: true,
             title: 'Welcome'
         }, {
             route: 'event',
             name: 'event',
-            moduleId: './event',
+            moduleId: 'event',
             nav: true,
             title: 'Event'
         }, {
             route: 'calendar',
             name: 'calendar',
-            moduleId: './calendar',
+            moduleId: 'calendar',
             nav: true,
             title: 'Calendar'
         }, {
             route: 'users',
             name: 'users',
-            moduleId: './users',
+            moduleId: 'users',
             nav: true,
             title: 'Github Users'
         }, {
             route: 'child-router',
             name: 'child-router',
-            moduleId: './child-router',
+            moduleId: 'child-router',
             nav: true,
             title: 'Child Router'
         }]);

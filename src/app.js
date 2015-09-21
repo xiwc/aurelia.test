@@ -11,73 +11,73 @@ export class App {
         config.map([{
             route: ['', 'welcome'],
             name: 'welcome',
-            moduleId: './welcome',
+            moduleId: 'welcome',
             nav: true,
             title: 'Welcome'
         }, {
             route: ['lifecycle'],
             name: 'lifecycle',
-            moduleId: './lifecycle',
+            moduleId: 'lifecycle',
             nav: true,
             title: 'Lifecycle'
         }, {
             route: ['custom-elem'],
             name: 'custom-elem',
-            moduleId: './custom-elem',
+            moduleId: 'custom-elem',
             nav: true,
             title: 'CustomElem'
         }, {
             route: ['dragdrop'],
             name: 'dragdrop',
-            moduleId: './drag-drop',
+            moduleId: 'drag-drop',
             nav: true,
             title: 'Dragdrop'
         }, {
             route: 'event',
             name: 'event',
-            moduleId: './event',
+            moduleId: 'event',
             nav: true,
             title: 'Event'
         }, {
             route: 'calendar',
             name: 'calendar',
-            moduleId: './calendar',
+            moduleId: 'calendar',
             nav: true,
             title: 'Calendar'
         }, {
             route: 'users',
             name: 'users',
-            moduleId: './users',
+            moduleId: 'users',
             nav: true,
             title: 'Github Users'
         }, {
             route: 'api',
             name: 'api',
-            moduleId: './api',
+            moduleId: 'api',
             nav: true,
             title: 'Http API'
         }, {
             route: 'iframe',
             name: 'iframe',
-            moduleId: './iframe',
+            moduleId: 'iframe',
             nav: true,
             title: 'Iframe'
         }, {
             route: 'i18n',
             name: 'i18n',
-            moduleId: './i18n',
+            moduleId: 'i18n',
             nav: true,
             title: 'I18N'
         }, {
             route: 'validation',
             name: 'validation',
-            moduleId: './validation',
+            moduleId: 'validation',
             nav: true,
             title: 'Validation'
         }, {
             route: 'child-router',
             name: 'child-router',
-            moduleId: './child-router',
+            moduleId: 'child-router',
             nav: true,
             title: 'Child Router'
         }]);

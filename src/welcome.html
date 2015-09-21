@@ -12,21 +12,7 @@
         <div click.delegate="addAndSetFereshHander()" class="ui button">Refresh</div>
     </div>
     <require from="button-comp"></require>
-   <!--  <section class="au-animate">
-       <h2>${heading}</h2>
-       <div>
-           <div class="col-md-2">
-               <ul class="well nav nav-pills nav-stacked">
-                   <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
-                       <a href.bind="row.href">${row.title}</a>
-                   </li>
-               </ul>
-           </div>
-           <div class="col-md-10" style="padding: 0">
-               <router-view></router-view>
-           </div>
-       </div>
-   </section> -->
+    <require from="comp/dropdown"></require>
     <div class="ui segment">
         <select ref="dd1" value.bind="sels" name="skills" multiple="" class="ui search selection dropdown">
             <option value="abc">ABC</option>
@@ -34,12 +20,6 @@
         </select>
         <div click.delegate="addItemHandler()" class="ui button">Add Item</div>
     </div>
-    <div class="ui segment">
-        <div class="ui active dimmer" if.bind="router.isNavigating">
-            <div class="ui large text loader">加载中...</div>
-        </div>
-        <router-view></router-view>
-    <require from="comp/dropdown"></require>
     <div class="ui segment">
         <div class="ui button" click.delegate="showHandler($event, val, 'abc')">Show callback params</div>
     </div>
