@@ -3,12 +3,13 @@ import {
 }
 from 'aurelia-framework';
 
-@bindable({
-  name:'myProperty', //name of the property on the class
-  attribute:'my-property', //name of the attribute in HTML
-  changeHandler:'myPropertyChanged', //name of the method to invoke when the property changes
-  defaultBindingMode: bindingMode.oneWay, //default binding mode used with the .bind command
-  defaultValue: undefined //default value of the property, if not bound or set in HTML
+@
+bindable({
+    name: 'myProperty', //name of the property on the class
+    attribute: 'my-property', //name of the attribute in HTML
+    changeHandler: 'myPropertyChanged', //name of the method to invoke when the property changes
+    defaultBindingMode: bindingMode.oneWay, //default binding mode used with the .bind command
+    defaultValue: undefined //default value of the property, if not bound or set in HTML
 })
 export class Welcome {
     heading = 'Welcome to the Aurelia Navigation App!';
@@ -42,6 +43,14 @@ export class Welcome {
         return `${this.firstName} ${this.lastName}`;
     }
 
+    onOK(newVal, oldVal) {
+        $.ntf.info('onOK Welcome ' + newVal + ' ' + oldVal);
+    }
+
+    onCancel(val) {
+        $.ntf.info('onCancel Welcome ' + val);
+    }
+
     constructor() {
         // Array.observe(this.items, (changes) => {
         //     $(this.dd3).dropdown();
@@ -51,8 +60,21 @@ export class Welcome {
 
     }
 
+    modalTestHandler() {
+        $(this.mdTest).modal({
+            detachable: false,
+            observeChanges: true,
+            onVisible: function() {
+                $(this).modal('cache sizes');
+
+            }
+        }).modal('show').modal('refresh');
+    }
+
     myPropertyChanged() {
-        $(this.dd3).dropdown({allowAdditions: true});
+        $(this.dd3).dropdown({
+            allowAdditions: true
+        });
         $(this.dd3).dropdown('set selected', this.sed);
         $.ntf.info('myPropertyChanged');
     }
@@ -90,7 +112,7 @@ export class Welcome {
     }
 
     // configureRouter(config, router) {
-        
+
     //     config.map([{
     //         route: 'users',
     //         name: 'users',
@@ -106,7 +128,7 @@ export class Welcome {
         this.items.push(new Date().getTime());
         // this.sels = ['ccc'];
     }
-    
+
     showHandler(evt, v, v2) {
 
         $.ntf.info(evt + ' ' + v + ' ' + v2)
@@ -169,7 +191,9 @@ export class Welcome {
 
         $(this.ddLan).dropdown();
         $(this.dd1).dropdown();
-        $(this.dd3).dropdown({allowAdditions: true});
+        $(this.dd3).dropdown({
+            allowAdditions: true
+        });
 
         // this.menu1.addEventListener('DOMNodeInserted', () => {
         //     $.ntf.info('DOMNodeInserted');

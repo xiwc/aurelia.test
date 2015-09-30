@@ -1,4 +1,22 @@
+<link rel="stylesheet" href="/styles/welcome.css">
 <template>
+    <div class="ui segment" id="sg001">
+        <div ref="mdTest" class="ui basic small modal">
+            <div class="content">
+                <div class="ui container segment">
+                    <p>sdfsdfsdf</p>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui button ok">OK</div>
+            </div>
+        </div>
+        <div click.delegate="modalTestHandler()" class="ui button">Modal Test</div>
+    </div>
+    <require from="comp/text-field"></require>
+    <div class="ui segment">
+        <text-field onok.bind="onOK" oncancel.bind="onCancel" value="任务修改名称，添加子任务模式窗口中的父任务显示的还是修改前的名称"></text-field>
+    </div>
     <div class="ui segment">
         <div ref="dd3" class="ui multiple search selection dropdown">
             <input type="hidden" name="country" value.bind="val">

@@ -1,0 +1,120 @@
+<style>
+.nt-textfield .header {
+    border-bottom-left-radius: 2.01px;
+    border-bottom-right-radius: 2.01px;
+    border-top-left-radius: 2.01px;
+    border-top-right-radius: 2.01px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    cursor: text;
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-left: -5px;
+    margin-right: 0px;
+    margin-top: 0px;
+    max-width: 100%;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 30px;
+    padding-top: 2px;
+    position: relative;
+    text-align: left;
+    vertical-align: top;
+    width: 753px;
+    word-break: break-word;
+}
+
+.nt-textfield .mouseover {
+    box-shadow: 0 0 0 1px #ccc;
+}
+
+.nt-textfield .edit-icon {
+    background-color: rgb(240, 240, 240);
+    border-left-color: rgb(204, 204, 204);
+    border-left-style: solid;
+    border-left-width: 1px;
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(112, 112, 112);
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    width: 30px;
+}
+
+.nt-textfield .edit-input {
+    width: 100%;
+}
+
+.nt-textfield .actions {
+    background-color: rgb(240, 240, 240);
+    border-bottom-color: rgb(204, 204, 204);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(204, 204, 204);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(204, 204, 204);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(51, 51, 51);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: none;
+    border-top-width: 0px;
+    box-shadow: rgba(111, 111, 111, 0.2) 0px 3px 6px 0px;
+    color: rgb(51, 51, 51);
+    cursor: text;
+    display: block;
+    outline-color: rgb(51, 51, 51);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 10px;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    top: 38px;
+    width: 59px;
+    z-index: 1;
+}
+
+.nt-textfield .edit-field {
+    position: relative;
+    width: 753px;
+}
+
+.nt-textfield .edit-field .actions .button {
+    padding: 5px;
+}
+</style>
+<template>
+    <div class="nt-textfield">
+        <h1 ref="header" click.delegate="editHandler()" mouseover.delegate="headerMouseOverHandler()" mouseout.delegate="headerMouseOutHandler()" class="header" show.bind="isHeaderShow">
+	        ${value}
+	        <span show.bind="isEditIconShow" class="edit-icon"><i class="edit small icon"></i></span>
+        </h1>
+        <div show.bind="isEditShow" class="edit-field">
+            <div class="ui input edit-input">
+                <input ref="input" blur.trigger="inputBlurHandler()" type="text" placeholder="" value.bind="value">
+            </div>
+            <div class="actions" mouseover.delegate="actionsMouseOverHandler()" mouseout.delegate="actionsMouseOutHandler()">
+                <button click.delegate="okHandler()" class="ui icon mini left attached button"><i class="checkmark icon"></i></button>
+                <button click.delegate="cancelHandler()" class="ui icon mini right attached button"><i class="remove icon"></i></button>
+            </div>
+        </div>
+    </div>
+</template>
