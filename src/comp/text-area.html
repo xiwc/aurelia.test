@@ -1,5 +1,5 @@
 <style>
-.nt-textfield .header {
+.nt-textarea .header {
     border-bottom-left-radius: 2.01px;
     border-bottom-right-radius: 2.01px;
     border-top-left-radius: 2.01px;
@@ -25,11 +25,16 @@
     word-break: break-word;
 }
 
-.nt-textfield .mouseover {
+.nt-textarea .header pre {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nt-textarea .mouseover {
     box-shadow: 0 0 0 1px #ccc;
 }
 
-.nt-textfield .edit-icon {
+.nt-textarea .edit-icon {
     background-color: rgb(240, 240, 240);
     border-left-color: rgb(204, 204, 204);
     border-left-style: solid;
@@ -47,12 +52,16 @@
     font-size: 28px;
 }
 
-.nt-textfield .edit-input {
+.nt-textarea .edit-input {
     width: 100%;
-    /*height: 100px;*/
 }
 
-.nt-textfield .actions {
+.nt-textarea .edit-input textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+.nt-textarea .actions {
     background-color: rgb(240, 240, 240);
     border-bottom-color: rgb(204, 204, 204);
     border-bottom-left-radius: 3px;
@@ -74,28 +83,28 @@
     float: right;
 }
 
-.nt-textfield .edit-field {
+.nt-textarea .edit-field {
     position: relative;
     width: 753px;
 }
 
-.nt-textfield .edit-field .clearfix {
+.nt-textarea .edit-field .clearfix {
     clear: both;
 }
 
-.nt-textfield .edit-field .actions .button {
+.nt-textarea .edit-field .actions .button {
     padding: 5px;
 }
 </style>
 <template>
-    <div class="nt-textfield">
-        <h1 ref="header" click.delegate="editHandler()" mouseover.delegate="headerMouseOverHandler()" mouseout.delegate="headerMouseOutHandler()" class="header" show.bind="isHeaderShow">
-            ${value}
+    <div class="nt-textarea">
+        <div ref="header" click.delegate="editHandler()" mouseover.delegate="headerMouseOverHandler()" mouseout.delegate="headerMouseOutHandler()" class="header" show.bind="isHeaderShow">
+            <pre>${value}</pre>
             <span show.bind="isEditIconShow" class="edit-icon"><i class="edit small icon"></i></span>
-        </h1>
+        </div>
         <div show.bind="isEditShow" class="edit-field">
             <div class="ui input edit-input">
-                <input ref="input" blur.trigger="inputBlurHandler()" type="text" placeholder="" value.bind="value">
+                <textarea ref="input" rows="3" blur.trigger="inputBlurHandler()" placeholder="" value.bind="value"></textarea>
             </div>
             <div class="actions" mouseover.delegate="actionsMouseOverHandler()" mouseout.delegate="actionsMouseOutHandler()">
                 <button click.delegate="okHandler()" class="ui icon mini left attached button"><i class="checkmark icon"></i></button>
