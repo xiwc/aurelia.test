@@ -82,6 +82,7 @@
       "fullcalendar": "github:fullcalendar/fullcalendar@^2.4.0",
       "jquery": "github:components/jquery@1.11.2",
       "jquery-ui": "github:components/jqueryui@^1.11.4",
+      "md-editor": "github:NextStepWebs/simplemde-markdown-editor@^1.7.4",
       "moment": "npm:moment@^2.10.3",
       "semantic-ui": "github:Semantic-Org/Semantic-UI@^2.0.8"
     },
@@ -93,6 +94,9 @@
     "overrides": {
       "npm:core-js@0.9.18": {
         "main": "client/shim.min"
+      },
+      "github:NextStepWebs/simplemde-markdown-editor@1.7.4": {
+        "main": "dist/simplemde.min"
       }
     }
   }

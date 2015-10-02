@@ -95,6 +95,10 @@
 .nt-textarea .edit-field .actions .button {
     padding: 5px;
 }
+
+.CodeMirror, .CodeMirror-scroll {
+    min-height: 200px;
+}
 </style>
 <template>
     <div class="nt-textarea">
@@ -103,7 +107,7 @@
             <span show.bind="isEditIconShow" class="edit-icon"><i class="edit small icon"></i></span>
         </div>
         <div show.bind="isEditShow" class="edit-field">
-            <div class="ui input edit-input">
+            <div class="edit-input">
                 <textarea ref="input" rows="3" blur.trigger="inputBlurHandler()" placeholder="" value.bind="value"></textarea>
             </div>
             <div class="actions" mouseover.delegate="actionsMouseOverHandler()" mouseout.delegate="actionsMouseOutHandler()">

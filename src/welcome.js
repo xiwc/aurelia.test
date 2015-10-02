@@ -64,8 +64,11 @@ export class Welcome {
         $(this.mdTest).modal({
             detachable: false,
             observeChanges: true,
+            onShow: function() {
+                $.ntf.info('onShow');
+            },
             onVisible: function() {
-                $(this).modal('cache sizes');
+                $.ntf.info('onVisible');
 
             }
         }).modal('show').modal('refresh');

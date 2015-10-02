@@ -2,6 +2,9 @@ import {
     bindable
 }
 from 'aurelia-framework';
+import 'md-editor';
+import 'md-editor/../simplemde.min.css!';
+// import '//cdn.jsdelivr.net/simplemde/latest/simplemde.min.js';
 
 export class TextArea {
 
@@ -21,6 +24,42 @@ export class TextArea {
     isEditIconShow = false;
 
     isBlurDisabled = false;
+
+    attached() {
+        // https://github.com/NextStepWebs/simplemde-markdown-editor
+        this.simplemde = new SimpleMDE({
+            element: this.input,
+            status: false,
+            initialValue: this.value,
+            toolbar: ["bold",
+                "italic",
+                "strikethrough",
+                "heading",
+                "heading-smaller",
+                "heading-bigger",
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "code",
+                "quote",
+                "unordered-list",
+                "ordered-list",
+                "link",
+                "image",
+                "horizontal-rule",
+                "preview",
+                "side-by-side",
+                "fullscreen",
+                "guide"
+            ]
+        });
+
+        this.simplemde.value(this.value);
+
+        this.simplemde.codemirror.on("change", () => {
+            console.log(this.simplemde.value());
+        });
+    }
 
     actionsMouseOverHandler() {
         this.isBlurDisabled = true;

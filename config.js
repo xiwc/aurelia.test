@@ -13,6 +13,18 @@ System.config({
         "github:*": "jspm_packages/github/*",
         "npm:*": "jspm_packages/npm/*"
     },
+    meta: {
+        // meaning [baseURL]/vendor/angular.js when no other rules are present
+        // path is normalized using map and paths configuration
+        'md-editor': {
+            format: 'global', // load this module as a global
+            // exports: 'angular', // the global property to take as the module value
+            // deps: [
+            //     // dependencies to load before this module
+            //     'jquery'
+            // ]
+        }
+    },
     map: {
         "aurelia-animator-css": "github:aurelia/animator-css@0.15.0",
         "aurelia-binding": "github:aurelia/binding@0.8.6",
@@ -48,12 +60,7 @@ System.config({
         "fullcalendar": "github:fullcalendar/fullcalendar@2.4.0",
         "jquery": "github:components/jquery@1.11.2",
         "jquery-ui": "github:components/jqueryui@1.11.4",
-        "lib-api": "lib:api",
-        "lib-config": "lib:config",
-        "lib-fullcalendar": "lib:fullcalendar/fullcalendar.min",
-        "lib-fullcalendar-lang-all": "lib:fullcalendar/lang-all",
-        "lib-jquery-notification": "lib:jquery.notification",
-        "lib-semantic-ui": "lib:semantic-ui/semantic",
+        "md-editor": "github:NextStepWebs/simplemde-markdown-editor@1.7.4/dist/simplemde.min",
         "moment": "npm:moment@2.10.6",
         "semantic-ui": "github:Semantic-Org/Semantic-UI@2.1.4",
         "github:Semantic-Org/Semantic-UI@2.1.4": {
