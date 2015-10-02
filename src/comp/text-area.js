@@ -27,10 +27,12 @@ export class TextArea {
 
     attached() {
         // https://github.com/NextStepWebs/simplemde-markdown-editor
+        // https://codemirror.net/doc/manual.html#events
         this.simplemde = new SimpleMDE({
             element: this.input,
-            status: false,
-            initialValue: this.value,
+            // status: false,
+            // autofocus: true,
+            // initialValue: this.value,
             toolbar: ["bold",
                 "italic",
                 "strikethrough",
@@ -54,10 +56,15 @@ export class TextArea {
             ]
         });
 
-        this.simplemde.value(this.value);
+        // this.simplemde.value('dfddf');
 
         this.simplemde.codemirror.on("change", () => {
             console.log(this.simplemde.value());
+            this.value = this.simplemde.value();
+        });
+        this.simplemde.codemirror.on("blur", () => {
+            console.log('codemirror blur');
+            this.inputBlurHandler();
         });
     }
 
@@ -100,8 +107,10 @@ export class TextArea {
         this.isEditShow = true;
         this.isBlurDisabled = false;
         setTimeout(() => {
-            this.input.select();
-            this.input.focus();
+            // this.input.select();
+            // this.input.focus();
+            this.simplemde.value(this.value);
+            this.simplemde.codemirror.focus();
         }, 100);
 
     }
