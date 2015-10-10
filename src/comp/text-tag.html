@@ -1,0 +1,26 @@
+<style>
+.nt-texttag input {
+    width: 4.2em;
+    cursor: text;
+    background: none transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none;
+    margin-left: 3px;
+}
+
+.nt-texttag.ui.segment {
+    padding: 6px;
+}
+
+.nt-texttag .ui.label {
+    margin-bottom: 3px;
+    margin-left: 0px;
+}
+</style>
+<template>
+    <div class="ui compact segment nt-texttag">
+        <a class="ui label" repeat.for="item of tags" data-value="${item.value}">${item.name}<i click.delegate="$parent.delHandler(item.value)" class="delete icon"></i></a>
+        <input placeholder="新建标签" keyup.delegate="keyupHandler($event)" class="search" title="新建标签" jquery.popup>
+    </div>
+</template>
