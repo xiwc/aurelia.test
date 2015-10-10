@@ -1,24 +1,55 @@
+import {
+    bindable
+}
+from 'aurelia-framework';
+
 export class TextTag {
 
-    tags = [{
-        name: '1111111',
-        value: '1111111'
-    }, {
-        name: '222222',
-        value: '222222'
-    }, {
-        name: '333333',
-        value: '333333'
-    }, {
-        name: '444444',
-        value: '444444'
-    }];
+    @
+    bindable tags = [];
+
+    isInputShow = false;
+    isAddIconShow = true;
+
+    @
+    bindable disabled = false;
+
+    @
+    bindable onadd;
+
+    @
+    bindable ondelete;
+
+    showInputHandler() {
+        this.isInputShow = true;
+        this.isAddIconShow = false;
+
+        setTimeout(() => {
+            this.input.focus();
+        }, 100);
+
+    }
+
+    focusoutHandler() {
+        this.isInputShow = false;
+        this.isAddIconShow = true;
+    }
 
     delHandler(val) {
 
         $.each(this.tags, (index, item) => {
             if (item.value == val) {
-                this.tags.splice(index, 1);
+
+                if (this.ondelete) {
+
+                    this.ondelete(val).then((data) => {
+
+                        if (data) {
+                            this.tags.splice(index, 1);
+                        }
+                    });
+
+                }
                 return false;
             }
         });
@@ -29,13 +60,16 @@ export class TextTag {
         if (evt.keyCode === 13) {
 
             var $input = $(evt.target);
-
-            this.tags.push({
-                name: $input.val(),
-                value: $input.val()
-            });
-
+            var val = $.trim($input.val());
             $input.val('');
+
+            if (this.onadd && val) {
+
+                this.onadd(val).then((data) => {
+                    this.tags.push(data);
+                });
+
+            }
         }
     }
 }

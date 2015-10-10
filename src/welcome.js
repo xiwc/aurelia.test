@@ -35,6 +35,20 @@ export class Welcome {
     // items = ['aaa', 'bbb', 'ccc'];
     sels = ['abc'];
 
+    tags = [{
+        name: '1111111',
+        value: '1111111'
+    }, {
+        name: '222222',
+        value: '222222'
+    }, {
+        name: '333333',
+        value: '333333'
+    }, {
+        name: '444444',
+        value: '444444'
+    }];
+
     //Getters can't be observed with Object.observe, so they must be dirty checked.
     //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
     //To optimize by declaring the properties that this getter is computed from, uncomment the line below.
@@ -214,6 +228,28 @@ export class Welcome {
         //     $(this.dd3).dropdown('set selected', this.sed);
         // }, false);
 
+        this.onaddHandler = (val) => {
+
+            $.ntf.info("onaddHandler: " + val);
+
+            return new Promise((resolve, reject) => {
+                resolve({
+                    name: val,
+                    value: val
+                });
+            });
+
+        };
+
+        this.ondeleteHandler = (val) => {
+
+            $.ntf.info("ondeleteHandler: " + val);
+
+            return new Promise((resolve, reject) => {
+                resolve(true);
+            });
+
+        };
 
     }
 

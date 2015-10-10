@@ -9,7 +9,8 @@
 <template>
     <div class="ui segment">
         <require from="comp/text-tag"></require>
-        <text-tag></text-tag>
+        <text-tag tags.bind="tags" onadd.bind="onaddHandler" ondelete.bind="ondeleteHandler"></text-tag>
+        <text-tag tags.bind="tags" disabled="true"></text-tag>
     </div>
     <div class="ui segment" id="sg001">
         <div ref="mdTest" class="ui small modal">

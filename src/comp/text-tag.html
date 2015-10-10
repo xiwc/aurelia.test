@@ -11,16 +11,22 @@
 
 .nt-texttag.ui.segment {
     padding: 6px;
+    min-height: 29px;
 }
 
 .nt-texttag .ui.label {
     margin-bottom: 3px;
     margin-left: 0px;
 }
+
+.nt-texttag i.icon {
+    margin-left: 0.25rem;
+}
 </style>
 <template>
     <div class="ui compact segment nt-texttag">
-        <a class="ui label" repeat.for="item of tags" data-value="${item.value}">${item.name}<i click.delegate="$parent.delHandler(item.value)" class="delete icon"></i></a>
-        <input placeholder="新建标签" keyup.delegate="keyupHandler($event)" class="search" title="新建标签" jquery.popup>
+        <a class="ui label" repeat.for="item of tags" data-value="${item.value}">${item.name}<i show.bind="!$parent.disabled" click.delegate="$parent.delHandler(item.value)" class="delete icon"></i></a>
+        <input focusout.delegate="focusoutHandler()" ref="input" show.bind="isInputShow" placeholder="新建标签" keyup.delegate="keyupHandler($event)">
+        <i show.bind="isAddIconShow && !disabled" click.delegate="showInputHandler()" class="circular inverted teal small add icon" title="新建标签" jquery.popup data-variation="inverted tiny"></i>
     </div>
 </template>
