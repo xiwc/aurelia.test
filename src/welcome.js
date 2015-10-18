@@ -76,7 +76,7 @@ export class Welcome {
 
     modalTestHandler() {
         $(this.mdTest).modal({
-            detachable: false,
+            // detachable: false,
             observeChanges: true,
             onShow: function() {
                 $.ntf.info('onShow');
